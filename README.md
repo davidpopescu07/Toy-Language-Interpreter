@@ -17,7 +17,7 @@ A multi-threaded interpreter for a simple imperative programming language, built
 
 ## GUI Usage
 
-1. **Select a program** from the list on the left
+1. **Select a program** from the list
 2. **Click "Run One Step"** to execute one statement across all threads
 3. **Inspect state** in the tables:
    - Execution Stack: current statements to execute
