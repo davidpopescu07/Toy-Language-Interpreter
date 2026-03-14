@@ -14,46 +14,6 @@ A multi-threaded interpreter for a simple imperative programming language, built
 - **Type checking** - Static type checking before execution
 - **GUI debugger** - Visual inspection of program state, symbol tables, heap, and semaphore tables
 
-## Semaphore Semantics
-
-Counting semaphores allow up to N threads to access a critical section:
-
-**createSemaphore(expr, var)**
-- Evaluates `expr` to get N (max permits)
-- Creates semaphore entry: `(N, empty_list)`
-- Stores semaphore index in `var`
-
-**acquire(var)**
-- Looks up semaphore by index in `var`
-- If `N > length(list)`: adds thread ID to list (acquires permit)
-- If `N <= length(list)`: re-pushes acquire onto stack (waits)
-
-**release(var)**
-- Looks up semaphore by index in `var`
-- Removes current thread ID from list (if present)
-
-
-## Running the Project
-
-### Prerequisites
-- Java 21+
-- JavaFX SDK
-
-### Compile and Run
-```bash
-# Compile
-javac -d out --module-path /path/to/javafx-sdk/lib --add-modules javafx.controls,javafx.fxml src/**/*.java
-
-# Run
-java --module-path /path/to/javafx-sdk/lib --add-modules javafx.controls,javafx.fxml -cp out gui.Main
-```
-
-### Using an IDE
-1. Open as a Java project
-2. Add JavaFX library to module path
-3. Run `gui.Main`
-
----
 
 ## GUI Usage
 
