@@ -6,13 +6,13 @@ A multi-threaded interpreter for a simple imperative programming language, built
 
 ## Features
 
-**Step-by-step execution** - Execute programs one statement at a time or run to completion
-**Multi-threaded execution** - Fork statements create new threads with independent execution stacks
-**Heap memory management** - Dynamic memory allocation with automatic garbage collection
-**Counting semaphores** - Thread synchronization primitives (acquire/release)
-**File I/O** - Read from external files
-**Type checking** - Static type checking before execution
-**GUI debugger** - Visual inspection of program state, symbol tables, heap, and semaphore tables
+**Step-by-step execution** - Execute programs one statement at a time or run to completion   
+**Multi-threaded execution** - Fork statements create new threads with independent execution stacks   
+**Heap memory management** - Dynamic memory allocation with automatic garbage collection   
+**Counting semaphores** - Thread synchronization primitives (acquire/release)   
+**File I/O** - Read from external files   
+**Type checking** - Static type checking before execution   
+**GUI debugger** - Visual inspection of program state, symbol tables, heap, and semaphore tables   
 
 
 ## GUI Usage
