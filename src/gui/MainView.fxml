@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="632.0" prefWidth="961.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.MainController">
+    <left>
+        <VBox alignment="TOP_CENTER" prefHeight="544.0" prefWidth="206.0" BorderPane.alignment="CENTER">
+            <children>
+                <Label text="Programs" />
+                <ListView fx:id="currentProgramsListView" prefHeight="370.0" prefWidth="159.0" />
+                <Label text="Output">
+                    <padding>
+                        <Insets top="10.0" />
+                    </padding>
+                </Label>
+                <ListView fx:id="outputListView" prefWidth="159.0" />
+                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                    <children>
+                        <Label text="Current Prg ID" />
+                        <TextField fx:id="programStateIdField" disable="true" prefHeight="26.0" prefWidth="34.0">
+                            <HBox.margin>
+                                <Insets left="10.0" />
+                            </HBox.margin>
+                        </TextField>
+                    </children>
+                    <VBox.margin>
+                        <Insets top="10.0" />
+                    </VBox.margin>
+                </HBox>
+            </children>
+            <padding>
+                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+            </padding>
+            <BorderPane.margin>
+                <Insets />
+            </BorderPane.margin>
+        </VBox>
+    </left>
+    <center>
+        <GridPane alignment="TOP_CENTER" hgap="10.0" prefHeight="464.0" prefWidth="480.0" vgap="10.0" BorderPane.alignment="CENTER">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints maxHeight="181.5999969482422" minHeight="10.0" prefHeight="163.99999084472657" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="215.1999938964844" minHeight="10.0" prefHeight="214.40000610351564" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <VBox alignment="CENTER" prefHeight="122.0" prefWidth="223.0" GridPane.columnIndex="1">
+                    <children>
+                        <Label text="All Program IDs" />
+                        <ListView fx:id="programsListView" />
+                    </children>
+                </VBox>
+                <VBox alignment="TOP_CENTER" prefHeight="451.0" prefWidth="198.0">
+                    <children>
+                        <Label text="Execution Stack" />
+                        <ListView fx:id="executionStackListView" />
+                    </children>
+                </VBox>
+                <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="1">
+                    <children>
+                        <Label text="Heap" />
+                        <TableView fx:id="heapId">
+                            <columns>
+                                <TableColumn fx:id="heapAddressColumn" prefWidth="75.0" text="Address" />
+                                <TableColumn fx:id="heapValueColumn" prefWidth="75.0" text="Value" />
+                            </columns>
+                        </TableView>
+                    </children>
+                </VBox>
+                <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                    <children>
+                        <Label text="Symbol Table" />
+                        <TableView fx:id="symTableId">
+                            <columns>
+                                <TableColumn fx:id="symVarColumn" prefWidth="75.0" text="Variable" />
+                                <TableColumn fx:id="symValueColumn" prefWidth="75.0" text="Value" />
+                            </columns>
+                        </TableView>
+                    </children>
+                </VBox>
+            </children>
+            <padding>
+                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+            </padding>
+        </GridPane>
+    </center>
+    <bottom>
+        <HBox alignment="CENTER" prefHeight="88.0" prefWidth="827.0" BorderPane.alignment="CENTER">
+            <children>
+                <Button fx:id="runOneStepButton" alignment="CENTER" mnemonicParsing="false" prefHeight="40.0" prefWidth="150.0" text="Run One Step">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Button>
+            </children>
+        </HBox>
+    </bottom>
+    <right>
+        <VBox alignment="TOP_CENTER" prefHeight="544.0" prefWidth="267.0" BorderPane.alignment="CENTER">
+            <children>
+                <Label text="File Table" />
+                <ListView fx:id="fileTableListView" prefHeight="163.0" prefWidth="246.0" />
+            <Label text="Semaphore Table">
+               <VBox.margin>
+                  <Insets top="11.0" />
+               </VBox.margin>
+            </Label>
+            <TableView fx:id="semaphoreId" prefHeight="198.0" prefWidth="246.0">
+              <columns>
+                <TableColumn fx:id="semaphoreTableIndexColumn" prefWidth="75.0" text="Index" />
+                <TableColumn fx:id="semaphoreTableValueColumn" prefWidth="77.5999755859375" text="Value" />
+                  <TableColumn fx:id="semaphoreTableListColumn" prefWidth="92.7999267578125" text="List Of Values" />
+              </columns>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </TableView>
+            </children>
+            <padding>
+                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+            </padding>
+        </VBox>
+    </right>
+</BorderPane>
